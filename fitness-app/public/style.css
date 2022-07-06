@@ -1,8 +1,12 @@
 body{
   background-color: rgb(44,44,48);
 }
-p{
+
+p,table,h1{
   color: white;
+  text-align: center;
+  margin-right:5%;
+  margin-left:30%;
 }
 
 /*Side Navigation*/
@@ -30,10 +34,18 @@ p{
   color: #f1f1f1;
 }
 
-.main {
-  margin-left: 200px;
-}
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+}
+
+/*Calendar Table*/
+table, th, td {
+  border: 1px solid rgb(44,44,48);
+  border-collapse: collapse;
+  margin-left: 50%;
+}
+th, td {
+  background-color: #96D4D4;
+}
