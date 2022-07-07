@@ -4,14 +4,14 @@ class SideNav extends React.Component{
   render(){
     return(
       <>
-      <div className="sideNav">
-        <img src={logoPlaceholder} alt="logoPlaceholder" width="150px" height="150px"/>
+      <div className="topNav">
         <nav>
+          <img src={logoPlaceholder} alt="logoPlaceholder" width="50px" height="50px"/>
           <a href="#">Create Routine</a>
-          <a href="#">Endurance</a>
-          <a href="#">Resistance</a>
-          <a href="#">Flexibility</a>
-          <a href="#">Balance</a>
+          <a href="#">Chest</a>
+          <a href="#">Arms</a>
+          <a href="#">Legs</a>
+          <a href="#">Abdomen</a>
         </nav>
       </div>
       </>
