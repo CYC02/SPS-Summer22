@@ -33,9 +33,6 @@ function Welcome(props){
           <br></br>
           <p>jkv ba bjkb ajk bkjabjk bvkb kvb jiquojkbk vbkbavkn ak</p>
           <br></br>
-          <a href="#" className="button" id="userPref">User Preferences</a>
-          <a href="#" className="button" id="scheduleRoutine">Schedule Routine</a>
-
         </div>
       </>
     );

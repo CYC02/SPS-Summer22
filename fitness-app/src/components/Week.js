@@ -18,8 +18,5 @@ function Week(props){
   );
 }
 
-function getDateValue(weekArr,idx){
-  return weekArr[idx];
-}
 
 export default Week;

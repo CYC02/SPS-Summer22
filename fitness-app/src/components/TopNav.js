@@ -7,6 +7,7 @@ class TopNav extends React.Component{
       <div className="topNav">
         <nav>
           <img src={logoPlaceholder} alt="logoPlaceholder" width="50px" height="50px"/>
+          <a href="#" >User Preferences</a>  
           <a href="#" >Create Routine</a>
           <a href="#" >Chest</a>
           <a href="#" >Arms</a>
