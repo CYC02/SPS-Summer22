@@ -1,7 +1,7 @@
 import React from 'react';
 import CalendarHead from './CalendarHead.js';
 
-class CalendarRoot extends React.Component{
+class CalendarPage extends React.Component{
   render(){
     return(
       <>
@@ -11,4 +11,4 @@ class CalendarRoot extends React.Component{
   }
 }
 
-export default CalendarRoot;
+export default CalendarPage;
