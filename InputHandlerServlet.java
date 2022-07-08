@@ -64,7 +64,19 @@ public class InputHandlerServlet extends HttpServlet {
     pref_list[10] = request.getParameter("day6");
     pref_list[11] = request.getParameter("day7"); //sun
 
+    // to get the number of days
+    int num_days = 0;
+    List<String> diff_days = new ArrayList<String>();
+    for (int i = 5; i < 12; i++){
+        if (pref_list[i] != null){
+            num_days += 1;
+            diff_days.add(pref_list[i]);
+        }
+    }
+
     //4 is the number of target areas
+    int num_exercises = 0;
+    List<String> diff_exercises = new ArrayList<String>();
     for (int i = 0; i < 4; i++){
         if (pref_list[i] != null){
 
@@ -80,15 +92,33 @@ public class InputHandlerServlet extends HttpServlet {
                 int random_exercise = (int) Math.floor(Math.random() * target_exercises.size());
                 
                 temp.add(random_exercise);
+                
 
                 while (Collections.frequency(temp, random_exercise)>1){
                     random_exercise = (int) Math.floor(Math.random() * target_exercises.size());
                 }
+                diff_exercises.add(target_exercises.get(random_exercise));
                 response.getWriter().println(target_exercises.get(random_exercise) + "<br/>");
             }
+            num_exercises += 3;
             temp.clear();
             response.getWriter().println("<br/>");
         }
+    }
+
+    // now we have the num of exercises and days. Need to schedule num of exercises per day
+    int exercises_per_day = (int)(num_exercises/num_days);
+    Map <String, List<String>> scheduling_map = new HashMap<String, List<String>>();
+
+    for (int i = 0; i < diff_days.size(); i++){
+        day = diff_days.get(i);
+        List<String> exercises = new ArrayList<String>();
+        for (int j = 0; j < exercises_per_day; j++){
+            exercises.add(diff_exercises.get(j));
+            diff_exercises.remove(j);
+        }
+    // add to mapp
+        scheduling_map.put(day, exercises);
     }
   }
 }
