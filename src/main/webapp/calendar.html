@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Fitness App</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="calendar.js"></script>
+  </head>
+  <body onload="renderCalendar()">
+    <div id="root">
+        <div class="topNav">
+            <nav>
+                <img src="images/logoPlaceholder.png" alt="logoPlaceholder" width="50px" height="50px" />
+                <a href="#" >User Preferences</a>
+                <a href="#">Create Routine</a>
+                <a href="#" >Chest</a>
+                <a href="#" >Arms</a>
+                <a href="#" >Legs</a>
+                <a href="#" >Abdomen</a>
+            </nav>
+        </div>
+        <div className="calendarHead">
+            <div id="calendar-container"></div>
+        </div>
+    </div>
+  </body>
+</html>
