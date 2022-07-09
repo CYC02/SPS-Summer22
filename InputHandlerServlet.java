@@ -10,16 +10,19 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Collections;
+import java.util.HashMap;
 
 @WebServlet("/input-handler")
 public class InputHandlerServlet extends HttpServlet {
    
-    //HashMap<String, List<String>> all_exercises = new HashMap<Integer, List<String>> ();
+    Map <String, ArrayList<String>> scheduling_map = new HashMap<String, ArrayList<String>>();
+   
     private static final Map <String, List<String>> all_exercises = Map.of(
         "Chest", List.of(
             "Incline Push-Up",
             "Barbell Bench Press",
-            "Incline Bench Press"
+            "Incline Bench Press", 
+            "Chest Fly"
         ), "Arms", List.of(
             "Lateral Raise",
             "Overhead Extension",
@@ -76,7 +79,8 @@ public class InputHandlerServlet extends HttpServlet {
 
     //4 is the number of target areas
     int num_exercises = 0;
-    List<String> diff_exercises = new ArrayList<String>();
+    ArrayList<String> diff_exercises = new ArrayList<String>();
+
     for (int i = 0; i < 4; i++){
         if (pref_list[i] != null){
 
@@ -88,39 +92,43 @@ public class InputHandlerServlet extends HttpServlet {
             ArrayList<Integer> temp = new ArrayList<Integer>();
 
             //pick 3 random exercises from each selected target area and print to the screen
-            for (int j = 0; j<3 ; j++){
+            for (int j = 0; j < 3 ; j++){
                 int random_exercise = (int) Math.floor(Math.random() * target_exercises.size());
                 
                 temp.add(random_exercise);
                 
-
+                //ensuring exercises arent repeated
                 while (Collections.frequency(temp, random_exercise)>1){
                     random_exercise = (int) Math.floor(Math.random() * target_exercises.size());
+                    if (Collections.frequency((temp), random_exercise) == 0){
+                        temp.remove((temp.size()-1));
+                        temp.add(random_exercise);
+                    }
                 }
+
                 diff_exercises.add(target_exercises.get(random_exercise));
                 response.getWriter().println(target_exercises.get(random_exercise) + "<br/>");
             }
             num_exercises += 3;
-            temp.clear();
             response.getWriter().println("<br/>");
         }
     }
 
     // now we have the num of exercises and days. Need to schedule num of exercises per day
-    int exercises_per_day = (int)(num_exercises/num_days);
+    int exercises_per_day = (int)(diff_exercises.size()/num_days);
     Map <String, List<String>> scheduling_map = new HashMap<String, List<String>>();
 
-    for (int i = 0; i < diff_days.size(); i++){
-        day = diff_days.get(i);
-        List<String> exercises = new ArrayList<String>();
+    for (int i = 0; i < num_days; i++){
+        String day = diff_days.get(i);
+        ArrayList<String> exercises = new ArrayList<String>();
         for (int j = 0; j < exercises_per_day; j++){
-            exercises.add(diff_exercises.get(j));
-            diff_exercises.remove(j);
+           exercises.add(diff_exercises.get(0));
+           diff_exercises.remove(0);
         }
-    // add to mapp
+        // add to mapp
         scheduling_map.put(day, exercises);
     }
+    response.getWriter().println(scheduling_map);
   }
 }
-
 
