@@ -1,35 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8" />
-    <title>Fitness App</title>
+    <meta charset="utf-8">
+    <title>SPS Fitness Webapp</title>
+    <link rel="stylesheet" href="style.css">
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
     </style>
-    <link rel="stylesheet" href="style.css">
+    <script src="calendar.js"></script>
   </head>
-  <body>
-    <div id="root">
-        <div class="topNav">
-            <nav>
-                <img src="images/logoPlaceholder.png" alt="logoPlaceholder" width="50px" height="50px" />
-                <a href="#" >User Preferences</a>
-                <a href="#">Create Routine</a>
-                <a href="#" >Chest</a>
-                <a href="#" >Arms</a>
-                <a href="#" >Legs</a>
-                <a href="#" >Abdomen</a>
-            </nav>
-        </div>
-        <div className="welcome">
-            <h1>Welcome! Get Started!</h1>
-            <p>Sitting in front of the computer for too long?
-            Well, it's time to get up and move!</p>
-            <br></br>
-            <p>Get started by entering your preferences with the "User Preferences" button.</p>
-            <br></br>
-            <p>Click on "Create routine" to schedule your workout routine!</p>
-          </div>
+  <body onload="renderCalendar()">
+
+    <div class="topNav">
+        <nav>
+            <img src="images/logoPlaceholder.png" alt="logoPlaceholder" width="50px" height="50px" />
+            <a href="https://rataliya-sps-summer22.appspot.com/user_pref.html" >User Preferences</a>
+            <a href="#">Create Routine</a>
+            <a href="#" >Chest</a>
+            <a href="#" >Arms</a>
+            <a href="#" >Legs</a>
+            <a href="#" >Abdomen</a>
+        </nav> 
+    </div>
+
+    <div className="calendarHead">
+        <div id="calendar-container"></div>
+    </div>
+
+    <div class="userpref">
+
+        <h1>Enter your preferences</h1>
+        <p>Start by selecting the main target areas</p>
+
+        <!-- <form method="POST" action="/input-handler" method="POST"> -->
+
+        <input type="checkbox" id="chest" name="chest" value="Chest">
+        <label for="chest">Chest</label><br>
+
+        <input type="checkbox" id="arms" name="arms" value="Arms">
+        <label for="arms">Arms</label><br>
+        
+        <input type="checkbox" id="abdomen" name="abdomen" value="Abdomen">
+        <label for="abdomen">Abdomen</label><br>
+        
+        <input type="checkbox" id="legs" name="legs" value="Legs">
+        <label for="legs">Legs</label><br>
+
+        <p>Select the days on which you would like to work out</p>
+        <input type="checkbox" id="day1" name="day1" value="Monday">
+        <label for="day1">Monday</label><br>
+
+        <input type="checkbox" id="day2" name="day2" value="Tuesday">
+        <label for="day2">Tuesday</label><br>
+        
+        <input type="checkbox" id="day3" name="day3" value="Wednesday">
+        <label for="day3">Wednesday</label><br>
+        
+        <input type="checkbox" id="day4" name="day4" value="Thursday">
+        <label for="day4">Thursday</label><br>
+        
+        <input type="checkbox" id="day5" name="day5" value="Friday">
+        <label for="day5">Friday</label><br>
+
+        <input type="checkbox" id="day6" name="day6" value="Saturday">
+        <label for="day6">Saturday</label><br>
+
+        <input type="checkbox" id="day7" name="day7" value="Sunday">
+        <label for="day7">Sunday</label><br>
+        
+        <button onclick="showExercises();">Schedule</button>
     </div>
   </body>
 </html>
