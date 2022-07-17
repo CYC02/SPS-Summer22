@@ -117,6 +117,10 @@ function getCalendarArr(){
 
   //fills the calendar with exercises
   function fill_Calender(translatedMessage){
+
+    const d = new Date();
+    document.getElementById("date-container").innerHTML = d.toString();
+
     var calendar = getCalendarArr();
     var daysOfWeekHtml="<tr><td>Sun</td><td>Mon</td><td>Tue</td><td>Wed</td><td>Thurs</td><td>Fri</td><td>Sat</td></tr>";
     var htmlCalendar = "<table>" + daysOfWeekHtml;
@@ -129,7 +133,7 @@ function getCalendarArr(){
     }
 
     var done = 'nd';
-    
+
     for (var i = 0; i < calendar.length; i++){
         htmlCalendar += "<tr>";
         for(var j = 0; j < calendar[0].length; j++){
@@ -178,7 +182,17 @@ function getCalendarArr(){
         }
         htmlCalendar += "</tr>";
     }
+    localStorage.setItem("calendar", htmlCalendar);
     htmlCalendar +="</table>";
     const calendarContainer = document.getElementById('calendar-container');
     calendarContainer.innerHTML = htmlCalendar;
   }
+
+  function show_calendar(){
+
+    const container = document.getElementById('c-container');
+    container.innerHTML = localStorage.getItem("calendar");
+  }
+
+
+
