@@ -1,7 +1,16 @@
 body{
     background-color: #C5FFFD;
   }
-  
+ p{
+    color: black;
+  }
+  h1{
+      color:lightgray
+  }
+  label {
+    color: black;
+    font-weight: bold;
+  }
   p,h1{
     color: #526760;
     text-align: center;
@@ -23,7 +32,7 @@ body{
     margin: 4px 2px;
     cursor: pointer;
   } */
-  
+
   /*Horizontal Navigation Bar*/
   .topNav {
     overflow: hidden;
@@ -32,7 +41,7 @@ body{
     position: sticky;
     top: 0;
   }
-  
+
   /* Style the topnav links */
   .topNav a {
     float: right;
@@ -43,7 +52,7 @@ body{
     padding: 14px 16px;
     text-decoration: none;
   }
-  
+
   /* Change color on hover */
   .topNav a:hover {
     background-color: #526760;
@@ -54,7 +63,7 @@ body{
     margin: 0;
     padding: 0;
   }
-  
+
   /*Calendar Table*/
   table, th, td {
     /* border: 1px solid rgb(44,44,48); */
@@ -66,3 +75,65 @@ body{
     background-color: #96D4D4;
     width: 10%;
   }
+
+  h1{
+    color:black;
+    }
+    label {
+    color: black;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        display: inline-block;
+        background-color: #374B4A;
+        display: block;
+        font-family: 'Montserrat', sans-serif;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    button {
+        display: inline-block;
+        background-color:#374B4A;
+        border-radius: 10px;
+        border: 4px double #cccccc;
+        color: #eeeeee;
+        text-align: center;
+        font-size: 15px;
+        padding: 20px;
+        width: 150px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+      }
+
+        button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+          }
+          button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+          }
+          button:hover {
+            background-color: lightgray;
+          }
+          button:hover span {
+            padding-right: 25px;
+          }
+          button:hover span:after {
+            opacity: 1;
+            right: 0;
+          }
+          
