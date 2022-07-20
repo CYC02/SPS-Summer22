@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Fitness Zone</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
+    </style>
+    <script src="resources.js"></script>
+  </head>
+  <body>
+
+    <div class="topNav">
+        <nav>
+            <img src="images/fitnessZoneLogo.png" alt="logoPlaceholder" width="130px" height="60px" />
+            <a href="viewroutine.html">View Routine</a>
+            <a href="index.html">Home</a>
+            <a href="chest.html" >Chest</a>
+            <a href="arms.html" >Arms</a>
+            <a href="legs.html" >Legs</a>
+            <a href="abs.html" >Abdomen</a>
+        </nav> 
+    </div>
+
+
+    <p>BMI Calculator</p>
+    <label for="weight">Enter your weight(lbs):</label>
+    <input type="text" id="weight" name="weight">
+
+    <br>
+
+    <label for="height">Enter your height:</label>
+
+    <select name="height" id="height">
+        <option value="4">4'</option>
+        <option value="5">5'</option>
+        <option value="6">6'</option>
+        <option value="7">7'</option>
+    </select>
+    
+    <select name="height_inches" id="height_inches">
+        <option value="0">0''</option>
+        <option value="1">1''</option>
+        <option value="2">2''</option>
+        <option value="3">3''</option>
+        <option value="4">4''</option>
+        <option value="5">5''</option>
+        <option value="6">6''</option>
+        <option value="7">7''</option>
+        <option value="8">8''</option>
+        <option value="9">9''</option>
+        <option value="10">10''</option>
+        <option value="11">11''</option>
+        <option value="12">12''</option>
+    </select>
+
+    <br>
+
+    <button id = "btn1" type="button" onclick="calculate_bmi()">Calculate!</button>
+
+    <p style="text-align:center">Your BMI is: </p>
+
+    <div className="BMI">
+        <div id="bmi-container"></div>
+    </div>
+
+    <img src="/images/bmi_updated.jpg">
+  </body>

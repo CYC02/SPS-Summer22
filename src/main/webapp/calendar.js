@@ -30,6 +30,11 @@ function getCalendarArr(){
     var prevMonth=[];
     var nextMonth=[];
     var offset;
+
+    if(d.getMonth()-1 === -1){
+      //when the current month is January, previous month's days are 31
+      daysInPreviousMonth = 31;
+    }
   
     for(let i = 1; i<=daysInCurrentMonth; i++ ){
       calendarArr.push(i);
